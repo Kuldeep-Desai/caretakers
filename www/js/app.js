@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'firebase'])
     $urlRouterProvider.otherwise("/login");
 
   })
-  .controller('ListCtrl', function ($scope, $ionicListDelegate, Staff) {
+  .controller('ListCtrl', function ($scope, $ionicListDelegate, $state, Staff) {
     $scope.careTakers = Staff;
 
     $scope.addStaff = function () {
@@ -82,6 +82,9 @@ angular.module('starter', ['ionic', 'firebase'])
           "name": name
         });
       }
+    };
+    $scope.goback = function () {
+      $state.go("login");
     };
   })
 /*.run(function($ionicPlatform) {

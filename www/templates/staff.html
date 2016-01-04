@@ -1,5 +1,8 @@
-<ion-view title="Staff">
-      <ion-nav-buttons class="primary">
+<ion-view title="Staff" cache-view="false" can-swipe-back="true" hide-back-button="false">
+      <ion-nav-back-button class="button-clear" ng-click="goback()">
+            <i class="ion-arrow-left-c"></i>Back
+            </ion-nav-back-button>
+      <ion-nav-buttons class="secondary">
             <button class="button button-icon ion-plus" ng-click="addStaff()"></button>
             </ion-nav-buttons>
       <ion-content>

@@ -1,0 +1,24 @@
+<ion-view title="Login">
+<ion-content>
+<div class="card" ng-hide="authData" ng-click="login()">
+	<button class="button button-balanced button-full">
+		Login with Facebook
+	</button>
+</div>
+
+<div class="card" ng-show="authData">
+	<div class="item item-text-wrap">
+		Hello {{authData.facebook.displayName}}!!
+		<br/>
+		<a href="#staff">
+			Staff List
+			</a>
+	</div>
+</div>
+<div class="card" ng-show="authData" ng-click="logout()">
+	<button class="button button-assertive button-full">
+		Logout
+	</button>
+</div>
+</ion-content>
+</ion-view>

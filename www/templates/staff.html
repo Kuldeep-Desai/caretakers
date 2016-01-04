@@ -1,0 +1,11 @@
+<ion-view title="Staff">
+      <ion-nav-buttons class="primary">
+            <button class="button button-icon ion-plus" ng-click="addStaff()"></button>
+            </ion-nav-buttons>
+      <ion-content>
+          <ion-list>
+              <ion-item ng-repeat="careTaker in careTakers">
+                  {{careTaker.name}}
+                  </ion-item></ion-list>
+      </ion-content>
+ </ion-view>

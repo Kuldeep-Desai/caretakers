@@ -1,0 +1,23 @@
+<ion-view title="Staff Details">
+		
+			<ion-content overflow-scroll="true" padding="true" class="has-header">
+		<div class="list card">
+			<div class="item item-avatar">
+				
+				<img src="http://www.clker.com/cliparts/c/6/b/3/1206570226231672217johnny_automatic_goofy_skull.svg" ng-if="!active">
+				<img src="http://www.clker.com/cliparts/w/l/6/z/d/I/blue-person-symbol.svg" ng-if="active">
+				
+				<h2>{{staff.fname}} {{staff.lname}}</h2>
+				 <a href="tel:{{staff.phone}}">
+					 <i class="ion-android-call"></i>
+					 {{staff.phone}}</a>
+			</div>
+			<div class="item item-body">
+				<h3>Gender : {{staff.gender}}</h3>
+				<h3>Date of Birth : {{staff.dob | date: 'mediumDate'}}</h3>
+				<h3>Date of Joining : {{staff.doj | date: 'mediumDate'}}</h3>
+				<h3>Slot : {{staff.slot}}</h3>
+			</div>
+		</div>
+		</ion-content>
+</ion-view>

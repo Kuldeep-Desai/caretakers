@@ -1,14 +1,27 @@
-<ion-view title="Staff" cache-view="false" can-swipe-back="true" hide-back-button="false">
-      <ion-nav-back-button class="button-clear" ng-click="goback()">
-            <i class="ion-arrow-left-c"></i>Back
-            </ion-nav-back-button>
-      <ion-nav-buttons class="secondary">
-            <button class="button button-icon ion-plus" ng-click="addStaff()"></button>
+
+<ion-view title="Staff" cache-view="false">
+      
+      <ion-nav-buttons side="secondary">
+            <button class="button button-icon ion-plus" ng-click="addStaff()" ui-sref="newStaff"></button>
             </ion-nav-buttons>
-      <ion-content>
+            
+      <ion-content overflow-scroll="true" padding="true" class="has-header">
+            <div class="list list-inset">
+            <label for="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="search" ng-model="search">
+            </label>
+        </div>
           <ion-list>
-              <ion-item ng-repeat="careTaker in careTakers">
-                  {{careTaker.name}}
+              <ion-item ng-repeat="careTaker in careTakers | filter:search" ui-sref="viewStaff({id:careTaker.$id})">
+                  {{careTaker.fname}} {{careTaker.lname}}
+                  <ion-option-button class="button-balanced" ui-sref="editStaff({id:careTaker.$id})">
+                  
+                        <i class="icon ion-edit"></i>
+                        </ion-option-button>
+                        <ion-option-button class="button-danger" on-tap="delete({{careTaker}})">
+                              <i class="icon ion-android-delete"></i>
+                        </ion-option-button>
                   </ion-item></ion-list>
       </ion-content>
  </ion-view>
